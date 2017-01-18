@@ -28,7 +28,7 @@ function flatten (matrix) {
 //   cell: [ '(333) 655-4555', '(333) 455-5555', '(333) 255-5555' ]
 // }
 function consolidate (number) {
-  if (Object.keys(number).length > 1){
+  if (Object.keys(number).length > 0){
   return number.reduce(
     function(acc, num){
     acc.home.push(num.phone.home); acc.cell.push(num.phone.cell);

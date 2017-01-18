@@ -25,8 +25,6 @@ function allOfOneType (items) {
     return typeof item;
   })
   var first = mapped[0];
-  var mapped1 = items.map(function (item){
-  })
   return items.every(function(a){
     return (typeof a === first && a.constructor === items[0].constructor);
   })
