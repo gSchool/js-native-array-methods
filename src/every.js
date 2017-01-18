@@ -4,7 +4,7 @@
 // [
 //   { name: 'Carrot', nutritious: true },
 //   { name: 'Celery', nutritious: true },
-//   { name: 'Candy', nutritious: false }
+//   { name: 'Candy', nutritious: true }
 // ]
 // Expected Output: true
 function allNutritious (items) {
