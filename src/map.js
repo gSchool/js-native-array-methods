@@ -24,9 +24,7 @@ function justArtists (songs) {
 //   { name: 'Banana Bunches', price: 2.33, quantity: 2 }
 // ]
 function toObject (candies) {
-  return candies.map(function(a) {
-    return {name:a[0], price:a[1], quantity:a[2]}
-  })
+  return candies.map(a => {name:a[0], price:a[1], quantity:a[2]})
 }
 
 module.exports = { justArtists, toObject }

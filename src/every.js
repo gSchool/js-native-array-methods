@@ -8,7 +8,7 @@
 // ]
 // Expected Output: true
 function allNutritious (items) {
-  return items.every(function(a){return (a.nutritious)})
+  return items.every(item => item.nutritious)
 }
 
 // Sample Input:
@@ -19,7 +19,7 @@ function allNutritious (items) {
 // ]
 // Expected Output: false
 function allOfOneType (items) {
-  return items.every(function(a){return (typeof a === "number")})
+  return items.every(function(a) {return ((typeof a === typeof items[0]) && a.constructor === items[0].constructor)})
 }
 
 module.exports = { allNutritious, allOfOneType }
