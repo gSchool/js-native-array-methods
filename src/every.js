@@ -8,8 +8,11 @@
 // ]
 // Expected Output: true
 function allNutritious (items) {
-
+  return items.every (function (moreItems) {
+      return moreItems.nutritious;
+  });
 }
+
 
 // Sample Input:
 // [
@@ -18,8 +21,10 @@ function allNutritious (items) {
 //   "23"
 // ]
 // Expected Output: false
-function allOfOneType (items) {
-  
+function allOfOneType (arrs) {
+  return arrs.every (function (elements) {
+        return (typeof arrs[0] === typeof arrs[1] === typeof arrs[2] === typeof arrs[3]);
+  })
 }
 
 module.exports = { allNutritious, allOfOneType }
