@@ -55,6 +55,16 @@ describe('allOfOneType', function () {
     assert.isFalse(result)
   })
 
+  it('should correctly differentiate between objects and arrays', function () {
+    const data = [
+      { time: new Date() },
+      [new Date()]
+    ]
+    const result = allOfOneType(data)
+
+    assert.isFalse(result)
+  })
+
   it('should return true when the array is empty', function () {
     const data = []
     const result = allOfOneType(data)

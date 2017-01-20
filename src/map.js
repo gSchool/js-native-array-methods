@@ -8,8 +8,19 @@
 // ]
 // Expected Output: ['Alex Mali', 'dvsn', 'Mura Masa']
 function justArtists (songs) {
+  var result = songs.map(artists)
+  return result
+  function artists(el){
+    var artist =  el.artist;
+    return artist
+
+  }
 
 }
+
+
+
+
 
 // Sample Input:
 // [
@@ -24,6 +35,16 @@ function justArtists (songs) {
 //   { name: 'Banana Bunches', price: 2.33, quantity: 2 }
 // ]
 function toObject (candies) {
+  var result = candies.map(addProp)
+  return result
+
+  function addProp(el){
+
+    //return newObj["name"]=el[0],newObj["price"]=el[1],newObj["quantity"]=el[2]
+    var newObj={"name": el[0], "price": el[1], "quantity": el[2]};
+    return newObj
+
+  }
 
 }
 
