@@ -21,10 +21,32 @@ function allNutritious (items) {
 //   "23"
 // ]
 // Expected Output: false
-function allOfOneType (arrs) {
-  return arrs.every (function (elements) {
-        return (typeof arrs[0] === typeof arrs[1] === typeof arrs[2] === typeof arrs[3]);
-  })
+function allOfOneType (items) {
+    function oneType(item, _, collection) {
+
+       var arrayTest = false;
+       if (Array.isArray(item)) {
+         arrayTest = true;
+       }
+
+       for (var i = 0; i < collection.length; i++) {
+         if (typeof item !== typeof collection[i]){
+           return false;
+         }
+       }
+
+       if (arrayTest === true) {
+         for (var j = 0; j < collection.length; j++) {
+           if ((Array.isArray(item))!==(Array.isArray(collection[j]))){
+             return false;
+           }
+         }
+       }
+
+       return true;
+     }
+     return items.every(oneType);
+
 }
 
 module.exports = { allNutritious, allOfOneType }
