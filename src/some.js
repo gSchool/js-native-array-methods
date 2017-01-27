@@ -9,7 +9,7 @@ function anyAreNegative (numbers) {
 // Sample Input: [ 'Once', 'upon', 'a', 'time', '' ]
 // Expected Output: true
 function includesFalseyValues (items) {
-  
+
 }
 
 module.exports = { anyAreNegative, includesFalseyValues }
