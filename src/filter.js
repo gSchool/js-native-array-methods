@@ -2,8 +2,8 @@
 
 // Sample Input: [ 11, 44, 78, 99 ]
 // Expected Output: [ 11, 44 ]
-function onlyOdd (numbers) {
-
+function onlyOdd(numbers) {
+    return numbers.filter(number => (number % 2 !== 0))
 }
 
 // Sample Input:
@@ -15,8 +15,45 @@ function onlyOdd (numbers) {
 
 // Expected Output:
 // { id: 42, name: 'Clojure' }
-function findById (languages, id) {
-  
+
+function findById(languages, id) {
+
+    return languages
+        .filter(obj => obj.id === id ? obj : null)
+        .shift()
+
+    function null(input) {
+        if (!input || obj.id !== id) {
+            return null
+        }
+    }
+
+
 }
 
-module.exports = { onlyOdd, findById }
+
+
+// function findById(languages, id) {
+//     return languages
+//         .filter(function(item) {
+//             if (item.id === id) {
+//                 return item
+//             } else {
+//                 return null;
+//             }
+//         })
+//         .shift()
+//
+// }
+//
+
+
+
+
+
+
+
+module.exports = {
+    onlyOdd,
+    findById
+}
