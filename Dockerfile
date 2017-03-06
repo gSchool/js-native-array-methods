@@ -13,7 +13,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 ADD package.json .
 RUN npm install
 
-# add complete repo to WORKDIR
+# add complete local repo to WORKDIR
 ADD . .
 
 # If necessary, add command here to clear logs. Only output to std out after this line will be displayed in Learn.
