@@ -1,4 +1,3 @@
-# install node
 FROM node:latest
 
 # Create directory for app
