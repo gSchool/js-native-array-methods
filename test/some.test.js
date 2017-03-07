@@ -40,7 +40,7 @@ describe('includesFalseyValues', function () {
   })
 
   it('should correctly include other types of falsey values', function () {
-    const data = [NaN, undefined, null, 0, false, '']
+    const data = [NaN, undefined, null, 0, false, ''];
     const result = data.reduce((acc, value) => {
       return acc && includesFalseyValues([true, value])
     }, true)
