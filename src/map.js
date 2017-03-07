@@ -7,7 +7,9 @@
 //   { song: 'Firefly', artist: 'Mura Masa' }
 // ]
 // Expected Output: ['Alex Mali', 'dvsn', 'Mura Masa']
-function justArtists (songs) {
+function justArtists(songs) {
+
+    return songs.map(song => song.artist)
 
 }
 
@@ -23,8 +25,20 @@ function justArtists (songs) {
 //   { name: 'Peppermint Poppers', price: 0.88, quantity: 1 },
 //   { name: 'Banana Bunches', price: 2.33, quantity: 2 }
 // ]
-function toObject (candies) {
+function toObject(candies) {
 
+    return candies.map(function(candy) {
+
+        var obj = {}
+        obj.name = candy[0]
+        obj.price = candy[1]
+        obj.quantity = candy[2]
+        return obj
+
+    })
 }
 
-module.exports = { justArtists, toObject }
+module.exports = {
+    justArtists,
+    toObject
+}

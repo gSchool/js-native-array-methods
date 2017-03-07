@@ -7,9 +7,15 @@
 //   { name: 'Candy', nutritious: true }
 // ]
 // Expected Output: true
-function allNutritious (items) {
-
+function allNutritious(items) {
+    return items.every(item => item.nutritious === true)
 }
+
+// function allNutritious(items) {
+//     return items.every(function(item) {
+//         return item.nutritious === true
+//     })
+// }
 
 // Sample Input:
 // [
@@ -18,8 +24,17 @@ function allNutritious (items) {
 //   "23"
 // ]
 // Expected Output: false
-function allOfOneType (items) {
-  
+function allOfOneType(items) {
+    return items.every(item => (typeof item === "number"))
 }
 
-module.exports = { allNutritious, allOfOneType }
+// function allOfOneType(items) {
+//     return items.every(function(item) {
+//         return typeof item === "number"
+//     })
+// }
+
+module.exports = {
+    allNutritious,
+    allOfOneType
+}
