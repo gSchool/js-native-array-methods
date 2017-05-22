@@ -19,10 +19,7 @@ ADD ./$SUBMISSION_SUBFOLDER /app
 # Use submission package.json to install dependencies
 RUN npm install
 
-# Uncomment to allow submission package.json to be overwritten by instructor package.json
-#ADD ./package.json /app
-#RUN npm install
-
 # Overwrite files in submission repository with instructor files
-ADD test.sh /app
-ADD test /app/test
+# ADD test.sh /app
+# ADD test/ /app/test
+ADD ./package.json /app
