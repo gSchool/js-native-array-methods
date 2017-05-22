@@ -21,5 +21,5 @@ RUN npm install
 
 # Overwrite files in submission repository with instructor files
 # ADD test.sh /app
-ADD test /app
+ADD test/ /app/test/
 ADD ./package.json /app
