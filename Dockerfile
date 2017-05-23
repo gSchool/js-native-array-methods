@@ -10,14 +10,15 @@ WORKDIR /app
 # Add to PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
-# Set SUBMISSION_SUBFOLDER build-arg
-ARG SUBMISSION_SUBFOLDER
+# Add package.json from upstream
+ADD package.json /app
 
-# Add entire student fork
-ADD ./$SUBMISSION_SUBFOLDER /app
-
-# Install dependencies (using student package.json)
+# Install dependencies
 RUN npm install
+
+# Add entire student fork (overwrites previously added package.json)
+ARG SUBMISSION_SUBFOLDER
+ADD $SUBMISSION_SUBFOLDER /app
 
 # Overwrite files in student fork with instructor files
 ADD test.sh /app
