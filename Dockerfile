@@ -13,13 +13,13 @@ ENV PATH /app/node_modules/.bin:$PATH
 # Set SUBMISSION_SUBFOLDER build-arg
 ARG SUBMISSION_SUBFOLDER
 
-# Add code to be tested
+# Add entire student fork
 ADD ./$SUBMISSION_SUBFOLDER /app
 
-# Use submission package.json to install dependencies
+# Install dependencies (using student package.json)
 RUN npm install
 
-# Overwrite files in submission repository with instructor files
+# Overwrite files in student fork with instructor files
 ADD test.sh /app
 ADD test /app/test
-ADD ./package.json /app
+ADD package.json /app
