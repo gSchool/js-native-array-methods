@@ -11,14 +11,16 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # Add package.json from upstream
-ADD package.json /app
+# ADD package.json /app
 
 # Install dependencies
-RUN npm install
+
 
 # Add entire student fork (overwrites previously added package.json)
 ARG SUBMISSION_SUBFOLDER
 ADD $SUBMISSION_SUBFOLDER /app
+
+RUN npm install
 
 # Overwrite files in student fork with upstream files
 ADD test.sh /app
