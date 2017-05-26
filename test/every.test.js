@@ -1,7 +1,7 @@
 const { assert } = require('chai')
 const { allNutritious, allOfOneType } = require('../src/every')
 
-
+describe('allNutritious', function () {
   it('should return true when the array is empty', function () {
     const data = []
     const result = allNutritious(data)
