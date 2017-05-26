@@ -10,21 +10,6 @@ describe('onlyOdd', function () {
     assert.deepEqual(result, expected)
   })
 
-  it('should return no items when no items are odd', function () {
-    const data = [22,44,66]
-    const expected = []
-    const result = onlyOdd(data)
-
-    assert.deepEqual(result, expected)
-  })
-
-  it('should return an empty array if the input is empty', function () {
-    const data = []
-    const expected = []
-    const result = onlyOdd(data)
-
-    assert.deepEqual(result, expected)
-  })
 })
 
 describe('findById', function () {
@@ -40,21 +25,5 @@ describe('findById', function () {
     assert.deepEqual(result, expected)
   })
 
-  it('should return null when no id matches', function () {
-    const data = [
-      { id: 42, name: 'Clojure' },
-      { id: 43, name: 'Haskell' },
-      { id: 44, name: 'Erlang' }
-    ]
-    const result = findById(data, 45)
 
-    assert.isNull(result)
-  })
-
-  it('should return null if the input is empty', function () {
-    const data = []
-    const result = findById(data, 1)
-
-    assert.isNull(result)
-  })
 })
