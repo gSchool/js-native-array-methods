@@ -11,12 +11,6 @@ describe('allNutritious', function () {
 })
 
 describe('allOfOneType', function () {
-  it('should return true when all items are of the same type', function () {
-    const data = [10,11,12,0]
-    const result = allOfOneType(data)
-
-    assert.isTrue(result)
-  })
 
   it('should correctly differentiate between objects and arrays', function () {
     const data = [
