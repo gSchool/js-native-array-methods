@@ -1,14 +1,6 @@
 const { assert } = require('chai')
 const { allNutritious, allOfOneType } = require('../src/every')
 
-describe('allNutritious', function () {
-  it('should return true when all items are nutritious', function () {
-    const data = [{ name: 'Water', nutritious: true }]
-    const result = allNutritious(data)
-
-    assert.isTrue(result)
-  })
-
 
   it('should return true when the array is empty', function () {
     const data = []
