@@ -9,15 +9,6 @@ describe('allNutritious', function () {
     assert.isTrue(result)
   })
 
-  it('should return false if any items are not nutritious', function () {
-    const data = [
-      { name: 'Water', nutritious: true },
-      { name: 'Garbage', nutritious: false }
-    ]
-    const result = allNutritious(data)
-
-    assert.isFalse(result)
-  })
 
   it('should return true when the array is empty', function () {
     const data = []
@@ -35,16 +26,6 @@ describe('allOfOneType', function () {
     assert.isTrue(result)
   })
 
-  it('should return false if any items are not of the same type', function () {
-    const data = [
-      { time: new Date() },
-      'object'
-    ]
-    const result = allOfOneType(data)
-
-    assert.isFalse(result)
-  })
-
   it('should correctly differentiate between objects and arrays', function () {
     const data = [
       { time: new Date() },
@@ -55,10 +36,4 @@ describe('allOfOneType', function () {
     assert.isFalse(result)
   })
 
-  it('should return true when the array is empty', function () {
-    const data = []
-    const result = allOfOneType(data)
-
-    assert.isTrue(result)
-  })
 })
