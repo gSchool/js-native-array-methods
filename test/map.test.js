@@ -14,13 +14,6 @@ describe('justArtists', function () {
     assert.deepEqual(result, expected)
   })
 
-  it('should return an empty array when the input is empty', function () {
-    const data = []
-    const expected = []
-    const result = justArtists(data)
-
-    assert.deepEqual(result, expected)
-  })
 })
 
 describe('toObject', function () {
@@ -40,11 +33,4 @@ describe('toObject', function () {
     assert.deepEqual(result, expected)
   })
 
-  it('should return an empty array when the input is empty', function () {
-    const data = []
-    const expected = []
-    const result = toObject(data)
-
-    assert.deepEqual(result, expected)
-  })
 })
