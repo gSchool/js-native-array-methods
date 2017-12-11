@@ -9,7 +9,9 @@
 // ]
 // Expected Output: [ 10, 20, 30, -10, -4, 0, 10, 100, 1000 ]
 function flatten (matrix) {
-
+  return matrix.reduce(function(x,y){
+    return x.concat(y)
+  },[])
 }
 
 // Sample Input:
@@ -24,7 +26,17 @@ function flatten (matrix) {
 //   cell: [ '(333) 655-4555', '(333) 455-5555', '(333) 255-5555' ]
 // }
 function consolidate (numbers) {
-  
+  return numbers.reduce(function(x,y){
+    if(x.home === undefined){
+      x.home = []
+    }
+    if(x.cell === undefined){
+      x.cell =[]
+    }
+    x.home.push(y.phone.home)
+    x.cell.push(y.phone.cell)
+    return x
+  },{})
 }
 
 module.exports = { flatten, consolidate }
