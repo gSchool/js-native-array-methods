@@ -1,22 +1,23 @@
+# Install latest version of node
 FROM node:latest
 
 # Create directory for app
-# Set as current directory for RUN, ADD, COPY commands
 RUN mkdir /app
+
+# Set as current directory for RUN, ADD, COPY commands
 WORKDIR /app
 
 # Add to PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
-# add package.json to WORKDIR and install
-# This step is split out from the rest of the repo to optimize cache hits
-ADD package.json .
+# Add package.json to WORKDIR and install
+ADD package.json /app
+
+# Install dependencies
 RUN npm install
 
-# add complete local repo to WORKDIR
-ADD . .
-
-# If necessary, add command here to clear logs. Only output to std out after this line will be displayed in Learn.
+# Add student code
+COPY submission.txt /app/src/every.js
 
 # test
 RUN npm test
