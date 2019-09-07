@@ -3,7 +3,7 @@
 // Sample Input: [ 11, 44, 78, 99 ]
 // Expected Output: [ 11, 44 ]
 function onlyOdd (numbers) {
-
+    return numbers.filter(e =>  e%2 != 0);
 }
 
 // Sample Input:
@@ -16,7 +16,11 @@ function onlyOdd (numbers) {
 // Expected Output:
 // { id: 42, name: 'Clojure' }
 function findById (languages, id) {
-  
+    if((languages.filter(e => e.id === id).length === 0)|| (languages.length === 0)) return null;
+    else{
+        const myLang =  languages.filter(e => e.id == id);
+        return myLang[0];
+    }
 }
 
 module.exports = { onlyOdd, findById }
