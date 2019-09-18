@@ -11,7 +11,7 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # Add package.json from upstream
-ADD package.json /app
+ADD WRONGpackage.json /app
 
 # Install dependencies
 RUN npm install
