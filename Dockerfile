@@ -1,26 +1,25 @@
-# Install latest version of node
-FROM node:latest
+# Start from the official node image: https://hub.docker.com/_/node
+FROM node:16.5-slim
 
-# Create directory for app
-RUN mkdir /app
-
-# Set as current directory for RUN, ADD, COPY commands
+# Makes directory and changes it to working directory
 WORKDIR /app
 
 # Add to PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
-# Add package.json from upstream
-ADD package.json /app
+# Add package.json from upstream 
+COPY package.json ./
 
 # Install dependencies
 RUN npm install
 
-# Add entire student fork (overwrites previously added package.json)
+# Student code from their fork submitted in Learn (overwrites previously added package.json)
 ARG SUBMISSION_SUBFOLDER
-ADD $SUBMISSION_SUBFOLDER /app
+COPY $SUBMISSION_SUBFOLDER ./
 
-# Overwrite files in student fork with upstream files
-ADD test.sh /app
-ADD package.json /app
-ADD test /app/test
+# Overwrite anything the student shouldn't touch
+COPY package.json ./
+COPY test /app/test
+
+# Always overwrite the test script that Learn will run
+COPY test.sh ./
